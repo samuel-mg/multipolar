@@ -316,7 +316,7 @@ def get_elite_connected(G, elite_nodes,max_path_len=10):
             break
 
     print ("calculando las conexiones...")
-    A = nx.to_scipy_sparse_matrix(G, nodelist = nodes_list)
+    A = nx.to_scipy_sparse_array(G, nodelist = nodes_list)
     elite_con = A[:,elite_index]
     nonzero_row_indice, _ = elite_con.nonzero()
     conectados_total = set(nonzero_row_indice)
